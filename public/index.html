@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Lens — What does a website collect about you?</title>
+  <meta name="description" content="Deep-scan any website to see what it collects about you and from you, in real time." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='13' cy='13' r='8' fill='none' stroke='%234c9aff' stroke-width='3'/><line x1='19' y1='19' x2='28' y2='28' stroke='%234c9aff' stroke-width='3' stroke-linecap='round'/></svg>" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Privacy Lens</h1>
+    <p class="tagline">Enter a website to see what data it collects <em>about you</em> and <em>from you</em> — in real time.</p>
+
+    <form id="searchForm" class="search-bar" autocomplete="off">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="e.g. cnn.com, tiktok.com, wikipedia.org"
+        aria-label="Website URL"
+        spellcheck="false"
+      />
+      <button type="submit">Analyze</button>
+    </form>
+
+    <div class="controls">
+      <label class="mode-toggle">
+        <input type="checkbox" id="deepToggle" checked />
+        <span>Deep scan <small>(runs the page in a real browser — slower, far more detail)</small></span>
+      </label>
+    </div>
+
+    <p class="hint">
+      Try:
+      <button class="chip" data-q="cnn.com">cnn.com</button>
+      <button class="chip" data-q="amazon.com">amazon.com</button>
+      <button class="chip" data-q="duckduckgo.com">duckduckgo.com</button>
+      <button class="chip" data-q="wikipedia.org">wikipedia.org</button>
+    </p>
+  </header>
+
+  <main id="results" class="results" aria-live="polite"></main>
+
+  <footer class="site-footer">
+    <p>
+      Live server-side scan + a curated tracker database (educational project — DBMS &amp; data privacy).
+      Deployable on Railway / Render. Results are best-effort; some sites block automated requests.
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

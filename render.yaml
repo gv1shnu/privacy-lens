@@ -1,0 +1,10 @@
+services:
+  # Single web service: serves the frontend AND the /api/scan backend.
+  # Uses the Docker runtime so the Dockerfile's Chromium + system libs are present
+  # (Puppeteer's deep scan needs a real browser).
+  - type: web
+    name: privacy-lens
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
