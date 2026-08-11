@@ -80,13 +80,7 @@ reliably provide. The included **`Dockerfile`** handles this.
   ad-funded site can take 30–40s. The toggle warns the user.
 - Results are **best-effort and educational**, not a legal privacy audit.
 
-## Extend the database
+## Screenshots
 
-Add entries to `data/trackers.json`:
+<img width="1888" height="1432" alt="image" src="https://github.com/user-attachments/assets/e5ec63c4-49fc-43ba-a176-dbe2053bbb1e" />
 
-```json
-{ "match": "example-tracker.com", "owner": "Example Inc", "category": "advertising", "collects": "What it profiles" }
-```
-
-Categories drive the scoring in `scanner.js` (`advertising` and `session-replay`
-penalize the most; `fingerprinting` probes are penalized in the deep scan).
